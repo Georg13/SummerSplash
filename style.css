@@ -70,8 +70,34 @@ background-color:transparent; -webkit-box-shadow: none; -moz-box-shadow: none; b
 svg.hidden{display: none;}
 h1{ line-height: 130%; margin-bottom: 30px;}
 h2{font-size: 26px; line-height: 113%; margin-bottom: 30px;}
+.button{
+    display: inline-block;
+    margin: 30px auto 0;
+    padding: 10px 45px;
+    text-shadow: 1px 1px #fff;
+    font-family: 'ExoB';
+    font-size: 21px;
+    cursor: pointer;
+}
+.button_violet{
+	background: violet;
+	transition: 0.25s;
+}
+.button_violet:hover{
+	background: #ee82eee3;
+	transition: 0.25s;
+    box-shadow: 5px 5px 0px 0px #5f9ea08f;
+}
 
-
+.button_white{
+	background: #fdfdfd;
+	transition: 0.25s;
+}
+.button_white:hover{
+	background: #ffffffe3;
+    transition: 0.25s;
+    box-shadow: 5px 5px 0px 0px #ee82eead;
+}
 /* end reset*/
 
 /* scroll */
@@ -80,7 +106,77 @@ h2{font-size: 26px; line-height: 113%; margin-bottom: 30px;}
 *::-webkit-scrollbar-track, *::-webkit-scrollbar-track {background: darkslategrey;}
 *::-webkit-scrollbar-thumb, *::-webkit-scrollbar-thumb {background-color: violet; border-radius: 5px;}
 /* end scroll */
+/* modals */
 
+.modal h3{
+	text-align: center;
+    text-shadow: 3px 3px violet;
+    margin: 30px 0 15px;
+    font-size: 40px;
+}
+.modal__wrap{
+	display: none;
+	position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+	z-index: 0;
+}
+.modal__wrap.act{
+	display: block;
+	background: #000000ab;
+    z-index: 10;
+}
+.modal{
+	display: none;
+    position: fixed;
+    background: #fff;
+    max-width: 460px;
+    margin: 0 auto;
+    top: 20%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    z-index: 11;
+}
+.modal.act{
+	display: block;
+}
+input.info{
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    border: 5px solid darkslategrey;
+    box-shadow: 5px 5px 0px 0px violet;
+    padding: 5px 10px;
+    margin: 0 auto 15px;
+}
+input.button{
+    display: block;
+    font-size: 22px;
+    font-family: 'Typometry';
+    padding: 6px 50px;
+    text-transform: capitalize;
+    font-weight: 600;
+    background: violet;
+    margin: 20px auto 20px;
+    cursor: pointer;
+}
+.modal__close{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 25px;
+    font-family: 'ExoB';
+    text-transform: uppercase;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    transform: rotate(90deg);
+	cursor: pointer;
+}
+/* end modals */
 /*elements*/
 .container{
 	max-width: 1440px;
@@ -131,7 +227,11 @@ h2{font-size: 26px; line-height: 113%; margin-bottom: 30px;}
 		font-size: 36px;
 		max-width: 140px;
 	}
-	h2{font-size: 36px;}
+	h2{
+		font-size: 46px;
+		margin: 45px auto 45px;
+	}
+	
 }
 /*end elements*/
 
@@ -660,6 +760,7 @@ a.sponsor img{
 	}
 	.section_2 .bg_img{
 		background-image:url("./images/sec_2_1920.jpg");
+		top: 110px;
 	}
 	.section_2 ul{
 		max-width: 800px;
@@ -750,12 +851,24 @@ a.sponsor img{
 		margin-bottom: 160px;
 	}
 	.section_2 .bg_img {
-		top: 150px;
+		top: 225px;
 	}
 	.section_2 ul {
 		margin-top: 65px;
 		padding: 25px 0;
 		font-size: 26px;
+	}
+	.section_3 h2 {
+		margin-top: 35px
+	}
+	.section_3 .bg_img {
+		top: 110px;
+	}
+	.tickets {
+		margin: 115px auto 300px;
+	}
+	.section_4 .content {
+		margin-top: 10px;
 	}
 	.sponsors {
 		margin: 60px auto 250px;
@@ -773,7 +886,11 @@ a.sponsor img{
 		transition: 0.25s;
 	}
 	.section_5 h2 {
-		width: 170px;
+		width: 230px;
+		margin-top: 66px;
+	}
+	.section_5 .content {
+		margin: 85px auto 100px;
 	}
 }
 @media screen and (min-width: 1200px){
