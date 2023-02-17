@@ -66,6 +66,9 @@ html input[disabled],button::-moz-focus-inner,input::-moz-focus-inner, input[typ
 input[type="number"]::-webkit-outer-spin-button, input[type="search"], input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration{ border:none; background-image:none;
 background-color:transparent; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none;}
+body.fixed{
+	overflow: hidden;
+}
 
 svg.hidden{display: none;}
 h1{ line-height: 130%; margin-bottom: 30px;}
