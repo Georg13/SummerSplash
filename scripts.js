@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
+    // header animat backgroun 
     function loadHeader(selector, addClass, time){
         window.setTimeout(()=>{
             const element = document.querySelector(selector);
@@ -8,6 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }, time);
     }
 
+    // menu scroll to id
     function scrollToId(selcter) {
         const btnScroll = document.querySelectorAll(selcter);
 
@@ -24,17 +26,44 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    let btn = document.querySelector('.burger'),
-        nav = document.querySelector('.navigation');
+    // burger menu
+    function burger(selectBurger, selectNav, menuItem){
+        const btn = document.querySelector(selectBurger),
+            nav = document.querySelector(selectNav),
+            menu = document.querySelectorAll(menuItem),
+            body_wrap = document.querySelector('body');
+
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                btn.classList.toggle('act');
+                nav.classList.toggle('act');
+                body_wrap.classList.toggle('fixed');
+            });
+
+                
+            menu.forEach( item => {
+                item.addEventListener('click', (e) => {
+                    btn.classList.toggle('act');
+                    nav.classList.toggle('act');
+                    body_wrap.classList.toggle('fixed');
+                });
+            });
+
+    }
+
+    burger('.burger', '.navigation', '.navigation .wrap .nav');
+    // let btn = document.querySelector('.burger'),
+    //     nav = document.querySelector('.navigation');
         
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
+    //     btn.addEventListener('click', (e) => {
+    //         e.preventDefault();
             
-            btn.classList.toggle('act');
-            nav.classList.toggle('act');
-        });
+    //         btn.classList.toggle('act');
+    //         nav.classList.toggle('act');
+    //     });
     
-    // modal
+    // Show modal
     function modalShow(selector, modal, modal_wrp, className) {
 
         const btn = document.querySelectorAll(selector),
@@ -52,6 +81,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });  
     }
 
+    // modal close
     function modalClose(selector, modal, modal_wrp, className) {
 
         const close = document.querySelector(selector),
