@@ -44,25 +44,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 
             menu.forEach( item => {
                 item.addEventListener('click', (e) => {
-                    btn.classList.toggle('act');
-                    nav.classList.toggle('act');
-                    body_wrap.classList.toggle('fixed');
+                    btn.classList.remove('act');
+                    nav.classList.remove('act');
+                    body_wrap.classList.remove('fixed');
                 });
             });
 
     }
-
-    burger('.burger', '.navigation', '.navigation .wrap .nav');
-    // let btn = document.querySelector('.burger'),
-    //     nav = document.querySelector('.navigation');
-        
-    //     btn.addEventListener('click', (e) => {
-    //         e.preventDefault();
-            
-    //         btn.classList.toggle('act');
-    //         nav.classList.toggle('act');
-    //     });
     
+    burger('.burger', '.navigation', '.navigation .wrap .nav');
+
     // Show modal
     function modalShow(selector, modal, modal_wrp, className) {
 
